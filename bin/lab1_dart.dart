@@ -1,34 +1,40 @@
 import 'dart:ffi';
-String greet(String name) {
-  return "Привет, $name!";
-}
-int square(int x) => x * x;
-double half(double x) => x / 2;
-void describePet({required String name, String species = "кот", int age = 0}) {
-  print("$name - $species, возраст $age");
-}
-String repeat(String text, [int times = 2]) {
-  String result = "";
-  for (int i = 0; i < times; i++) {
-    result += text;
-  }
-  return result;
-}
+
 void main() {
-  print(greet("Артём"));
-  print(greet("Мария"));
-  print(square(5));
-  print(half(7));
-  describePet(name: "Бобик", age: 10);
-  describePet(name: "Стрелка", species: "щенок");
-  print(repeat("ХА"));
-  print(repeat("ХА", 5));
-  List<int> numbers = [3, 1, 4, 1, 5, 9];
-  numbers.sort((a, b) => b - a);
-  print(numbers);
-  List<String> names = ["Артём", "Мария", "Иван"];
-  List<String> upper = names.map((name) => name.toUpperCase()).toList();
-  print(upper);
-  List<String> longNames = names.where((name) => name.length > 4).toList();
-  print(longNames);  
+  int score2 = 85;
+  String grade;
+  if (score2 >= 90) {
+    grade = "A";
+  } else if (score2 >= 75) {
+    grade = "B";
+  } else {
+    grade = "C";
+  }
+  print(grade);
+  String result = score2 >= 60 ? "Сдал" : "Не сдал";
+  print(result);
+  for (int i = 0; i < 5; i++) {
+    print(i);
+  }
+  List<String> fruits3 = ["яблоко", "банан", "груша"];
+  for (var fruit in fruits3) {
+    print(fruit);
+  } 
+  int n = 0;
+  while (n < 3) {
+    print(n);
+    n++;
+  }
+  String day = "Пн";
+  switch (day) {
+    case "Сб":
+    case "Вс":
+      print("Выходной");
+      break;
+    case "Пн":
+      print("Начало недели");
+      break;
+    default:
+      print("Рабочий день");
+  }
 }
